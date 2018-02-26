@@ -2,7 +2,7 @@ def first_challenge
   contacts = {
     "Jon Snow" => {
       name: "Jon",
-      email: "jon_snow@thewall.we", 
+      email: "jon_snow@thewall.we",
       favorite_icecream_flavors: ["chocolate", "vanilla", "mint chip"],
       knows: nil
     },
@@ -14,9 +14,18 @@ def first_challenge
   }
 
   #your code here
+  contacts.each do |contact, data|
 
+    if contact == "Freddy Mercury"
+      contacts[contact].each do |attribute, value|
+        if attribute == :favorite_icecream_flavors
+          # this attribute has an array as value, so use array #delete method
+          contacts[contact][attribute].delete("strawberry")
+        end
+      end
+    end
+  end
 
   #remember to return your newly altered contacts hash!
   contacts
 end
-
