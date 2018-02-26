@@ -7,7 +7,13 @@ def second_challenge
   }
 
   #code your solution here!
+  values = []
 
-  
+  groceries.each do | key, value|
+    values += groceries[key]
+  end
+
+  print values
+  values
 
 end
